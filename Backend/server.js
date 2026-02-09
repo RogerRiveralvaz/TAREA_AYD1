@@ -1,28 +1,16 @@
 const express = require('express');
-const {dbConfig}    = require('./db');
-const mysql = require('mysql2/promise');
-
 const app = express();
 app.use(express.json());
 
-
-let connection;
-async function ConectarDB() {
-    try {
-        connection = await mysql.createConnection(dbConfig);    
-        console.log('Connected to MySQL database.');
-    } catch (error) {
-        console.error('Error connecting to MySQL database:', error);
-    }
-}
-    ConectarDB();
+// Ruta principal para la tarea
 app.get('/', (req, res) => {
-    res.json({message: 'Hello World!'});
+    res.json({
+        nombre: 'Roger Alberto Rivera Alvarez',
+        cancion_favorita: 'Puedo Imaginarme : vertical'  
+    });
 });
 
 const PORT = 3000;
 app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}.`);
+   console.log(`Server is running on port ${PORT}.`);
 });
-
-// Example route to fetch data from MySQL database
