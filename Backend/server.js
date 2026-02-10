@@ -6,7 +6,7 @@ app.use(express.json());
 app.get('/', (req, res) => {
     res.json({
         nombre: 'Roger Alberto Rivera Alvarez',
-        cancion_favorita: 'Puedo Imaginarme : vertical '  
+        album_favorito: 'Vertical - Imaginate'  
     });
 });
 
